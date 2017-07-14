@@ -25,7 +25,7 @@ class TelephoneDiary{
 			count=0;
 			count1=0;
 			count2=1;
-		}
+		} 
 		
 		
 		bool contains_number(const std::string &c)
@@ -155,11 +155,11 @@ class TelephoneDiary{
 				cout<<"Data Inserted Successfully ! ! ! ! !"; 
 			} 
 		} 
-		//==========================================================================
+		//================================================================================
 			
-		//						ReadData Function is here
+		//						ReadData Function is here for Reading content from file
 			
-		//==========================================================================
+		//================================================================================ 
 		
 		void ReadData(){
 			
@@ -192,7 +192,7 @@ class TelephoneDiary{
 			cout<<"\n\t\tEnter Name : ";
 			cin>>Data;
 			string myline;
-			x=16,y=23;
+			x=16,y=22;
 			while (getline(in, myline)) {
 			        if (myline.find(Data) != string::npos) {
 			        	gotoxy(x,y);
@@ -202,22 +202,7 @@ class TelephoneDiary{
 			in.close(); 
 		}
 		
-		void DeleteData(){
-			ifstream fin;
-			fin.open("TelephoneDiary.txt");
-			string h,line;
-			ofstream temp;
-			temp.open("TelephoneDiary.txt");
-			cout<<"Which Name you want to Delete"<<endl;
-			cout<<"Name: ";
-			cin>>h;
-			while (getline(fin,line))
-			{
-			    line.replace(line.find(h),h.length(),"");
-			    temp << line << endl;
-			
-			} 
-		}
+	 
 			
 }; 
 
@@ -233,10 +218,8 @@ int main(){
 	cout<<"\t\t|                   |   \n";
 	cout<<"\t\t| 2. DISPLAY RECORD |\n";
 	cout<<"\t\t|                   |   \n";
-	cout<<"\t\t| 3. DELETE RECORD  |\n";
-	cout<<"\t\t|                   |   \n";
-	cout<<"\t\t| 4. SEARCH RECORD  |\n";
-	cout<<"\t\t|                   |   \n";
+	cout<<"\t\t| 3. SEARCH RECORD  |\n";
+	cout<<"\t\t|                   |   \n";	 
 	cout<<"\t\t| 0. EXIT           |\n";
 	cout<<"\t\t|                   |   \n";
 	cout<<"\t\t=====================";
@@ -252,10 +235,8 @@ int main(){
 				 		diary.ReadData();
 				 	break;
 				
+			 
 				case 3:
-						 diary.DeleteData();
-					break; 	
-				case 4:
 						diary.DisplayData();
 					break;	
 				case 0:
